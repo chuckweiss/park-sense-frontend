@@ -11,9 +11,9 @@ const NavBar = () => {
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       />
-      <NavBarItem to="/qrScanner" text="QR" name="qr_code_scanner" />
+      <NavBarItem to="/lotStatus" text="Lot Status" name="qr_code_scanner" />
       <NavBarItem to="/inventory" text="Inventory" name="list" />
-      <NavBarItem to="/order" text="Order" name="dashboard" />
+      <NavBarItem to="/lotHistory" text="Lot History" name="dashboard" />
     </nav>
   );
 };
