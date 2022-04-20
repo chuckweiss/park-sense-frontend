@@ -22,14 +22,14 @@ function App() {
     return data;
   };
 
-  useEffect(() => {
-    const getLots = async () => {
-      const lots = await fetchLots();
-      setLots(lots);
-      setLotName(lots[0]);
-    };
-    getLots();
-  }, []);
+  // useEffect(() => {
+  //   const getLots = async () => {
+  //     const lots = await fetchLots();
+  //     setLots(lots);
+  //     setLotName(lots[0]);
+  //   };
+  //   getLots();
+  // }, []);
 
   useEffect(() => {
     const getLot = async (name) => {
@@ -42,7 +42,24 @@ function App() {
     getLot(lotName);
   }, [lotName]);
 
-  // console.log(lots);
+  useEffect(() => {
+    const f = () => {
+      const getLots = async () => {
+        const lots = await fetchLots();
+        setLots(lots);
+        setLotName("");
+        setLotName(lots[0]);
+      };
+      getLots();
+    }
+    
+    f();
+    const interval = setInterval(f, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // console.log(lots, lot.length, lot);
 
   return (
     <div className="flex flex-col items-center">
