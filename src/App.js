@@ -31,20 +31,19 @@ function App() {
     getLots();
   }, []);
 
-  useEffect(() => {
-    const getLot = async (name) => {
-      if (name) {
-        const lot = await fetchLot(name);
-        lot.sort((a, b) => a.date > b.date);
-        setLot(lot);
-      }
-    };
-    getLot(lotName);
-  }, [lotName]);
+  // useEffect(() => {
+  //   const getLot = async (name) => {
+  //     if (name) {
+  //       const lot = await fetchLot(name);
+  //       lot.sort((a, b) => a.date > b.date);
+  //       setLot(lot);
+  //     }
+  //   };
+  //   getLot(lotName);
+  // }, [lotName]);
 
   useEffect(() => {
     const f = () => {
-      console.log("time")
       const getLot = async (name) => {
         if (name) {
           const lot = await fetchLot(name);
