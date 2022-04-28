@@ -5,4 +5,5 @@ For park sense
 To test the app:
 
 npm i
+
 npm start
